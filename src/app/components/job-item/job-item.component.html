@@ -1,1 +1,14 @@
-<p>job-item works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+      <img [src]="job().companyLogo" [alt]="job().title" class="logo">
+    </div>
+    <div class="col-sm-9 text-left">
+      <h3>{{ job().title }}</h3>
+      <p>Company: {{job().companyName}}  Reference: {{ job().reference}} </p>
+    </div>
+    <div class="col-sm-1">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

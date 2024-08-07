@@ -1,1 +1,13 @@
 <p>job-list works!</p>
+
+<div class="container" *ngIf="(jobs$ | async) as jobs">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      @for (job of jobs; track $index) {
+        <app-job-item [job]="job">
+          <span class="icon-star" (click)="toggleFavorite(job)" [ngStyle]="isFavorite(job) ? {'background-color':'yellow'} : {}"></span>
+        </app-job-item>
+      }
+    </div>
+  </div>
+</div>
