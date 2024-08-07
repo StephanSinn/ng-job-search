@@ -5,16 +5,12 @@ import { Job } from '../models/job';
 @Injectable({
   providedIn: 'root',
 })
-export class JobsDataService implements OnInit {
+export class JobsDataService {
   httpClient = inject(HttpClient);
 
   favorites: Job[] = [];
 
   jobs$ = this.httpClient.get<Job[]>('/jobs');
-
-  ngOnInit() {
-    this.getFavoritesLocally();
-  }
 
   addFavorite(job: Job) {
     this.favorites.push(job);

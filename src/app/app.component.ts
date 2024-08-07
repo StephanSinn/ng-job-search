@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { JobsDataService } from './services/jobs-data.service';
 import { AsyncPipe, JsonPipe } from '@angular/common';
@@ -11,6 +11,11 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'ng-job-search';
+  dataService = inject(JobsDataService);
+
+  ngOnInit() {
+    this.dataService.getFavoritesLocally();
+  }
 }
