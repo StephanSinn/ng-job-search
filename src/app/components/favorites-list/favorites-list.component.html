@@ -1,1 +1,16 @@
-<p>favorites-list works!</p>
+<div class="container" >
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2" *ngIf="jobDataService.favorites.length; else noFavorites">
+      @for (favorite of jobDataService.favorites; track $index) {
+        <app-job-item [job]="favorite">
+        </app-job-item>
+      }
+    </div>
+    <ng-template #noFavorites>
+      <div class="col-sm-8 col-sm-offset-2">
+        <p>There are no favorites please go to the jobs menu and add some jobs to your favorite's list and you will find them here.</p>
+      </div>
+    </ng-template>
+  </div>
+</div>
+
