@@ -49,4 +49,20 @@ span.icon-star.active {
   cursor: pointer;
 }
 
+.text-link {
+  cursor: pointer;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.job-tag {
+  --mark-back-color: #5d80ab;
+  margin-right: 0.5em;
+}
+
+.job-description {
+  margin: var(--universal-margin);
+}
 

@@ -1,1 +1,28 @@
-<p>job-details works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-left">
+      <button (click)="goBackToPreviousPage()">
+        <span class="icon-home"></span> Back
+      </button>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2" *ngIf="(job$ | async) as job">
+      <app-job-title [job]="job">
+        <p>
+          <mark *ngFor="let type of job.types" class="tag job-tag" [innerHTML]="type"></mark>
+          <mark *ngFor="let industries of job.industries" class="tag job-tag" [innerHTML]="industries"></mark>
+        </p>
+      </app-job-title>
+      <div class="text-left">
+        <p><strong>Publish date:</strong> {{job.publishDate | date:'shortDate'}} </p>
+        <p><strong>Location:</strong> {{job.location}}</p>
+        <p><strong>Reference:</strong> {{job.reference}}</p>
+        <p><strong>Description:</strong> </p>
+        <div [innerHTML]="job.description" class="job-description"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
