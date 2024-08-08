@@ -10,7 +10,8 @@
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2" *ngIf="(job$ | async) as job">
       <app-job-title [job]="job">
-        <p>
+        <span title-prefix>{{job.companyName}} -</span>
+        <p subtitle>
           <mark *ngFor="let type of job.types" class="tag job-tag" [innerHTML]="type"></mark>
           <mark *ngFor="let industries of job.industries" class="tag job-tag" [innerHTML]="industries"></mark>
         </p>

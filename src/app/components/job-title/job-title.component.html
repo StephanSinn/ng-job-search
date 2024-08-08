@@ -4,8 +4,11 @@
       <img [src]="job().companyLogo" [alt]="job().title" class="logo">
     </div>
     <div class="col-sm-10 text-left">
-      <h3 [routerLink]="'/jobs/'+job().id" [ngClass]="linkedTitle() ? 'text-link' : ''" >{{ job().title }}</h3>
-      <ng-content></ng-content>
+      <h3 [routerLink]="'/jobs/'+job().id" [ngClass]="linkedTitle() ? 'text-link' : ''" >
+        <ng-content select="[title-prefix]"></ng-content>
+        {{ job().title }}
+      </h3>
+      <ng-content select="[subtitle]"></ng-content>
     </div>
   </div>
 </div>
