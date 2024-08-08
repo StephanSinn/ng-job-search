@@ -29,9 +29,9 @@ import { JobTitleComponent } from '../job-title/job-title.component';
   styles: ``,
 })
 export class JobDetailsComponent {
-  private activatedRoute = inject(ActivatedRoute);
-  private jobsDataService = inject(JobsDataService);
-  private location = inject(Location);
+  private activatedRoute: ActivatedRoute = inject(ActivatedRoute);
+  private jobsDataService: JobsDataService = inject(JobsDataService);
+  private location: Location = inject(Location);
 
   goBackToPreviousPage(): void {
     this.location.back();

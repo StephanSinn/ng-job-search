@@ -3,6 +3,7 @@ import { JobsDataService } from '../../services/jobs-data.service';
 import { AsyncPipe, NgClass, NgIf, NgStyle } from '@angular/common';
 import { JobItemComponent } from '../job-item/job-item.component';
 import { Job } from '../../models/job';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-job-list',
@@ -12,14 +13,14 @@ import { Job } from '../../models/job';
   styles: ``,
 })
 export class JobListComponent {
-  private jobsDataService = inject(JobsDataService);
-  jobs$ = this.jobsDataService.jobs$;
+  private jobsDataService: JobsDataService = inject(JobsDataService);
+  jobs$: Observable<Job[]> = this.jobsDataService.jobs$;
 
   isFavorite(job: Job): boolean {
     return this.jobsDataService.favorites.some((fav) => fav.id == job.id);
   }
 
-  toggleFavorite(job: Job) {
+  toggleFavorite(job: Job): void {
     return this.isFavorite(job)
       ? this.jobsDataService.removeFavorite(job)
       : this.jobsDataService.addFavorite(job);

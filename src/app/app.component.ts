@@ -12,10 +12,10 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  title = 'ng-job-search';
-  jobsDataService = inject(JobsDataService);
+  title: string = 'ng-job-search';
+  jobsDataService: JobsDataService = inject(JobsDataService);
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.jobsDataService.getFavoritesLocally();
   }
 }
