@@ -1,12 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-11">
-      <app-job-title [job]="job()">
-        <p>Company: {{ job().companyName }}  Reference: {{ job().reference }} </p>
+      <app-job-title [job]="job()" [linkedTitle]="true">
+        <p><span>Company: {{ job().companyName }}</span> <span
+          class="job-reference">Reference: {{ job().reference }}</span></p>
       </app-job-title>
     </div>
-    <div class="col-sm-1" *ngIf="isJobList()">
-      <span class="icon-star" [id]="'star-'+job().id" (click)="toggleFavorite()" [ngClass]="isFavorite() ? 'active' : ''"></span>
+    <div class="col-sm-1 align-items-center" *ngIf="isJobList()">
+      <span class="icon-star" [id]="'star-'+job().id" (click)="toggleFavorite()"
+            [ngClass]="isFavorite() ? 'active' : ''"></span>
     </div>
   </div>
 </div>

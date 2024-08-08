@@ -14,3 +14,6 @@ Vercel: https://vercel.com/stephansinns-projects/weather
 
 For the addition and removal ob the job to the list of favorites, another possible way is by using ngContent. I also used this, as you can see from 
 the git history. I decided to fulfil the task by Event Binding, since I already demonstrated the usage of ngContent in another component.  
+
+I interpreted the Back button to lead the user back to where he/she came from, not only to the jobs page ('/'), 
+so that a user will also go back to favorites when he looks on the details from the favorites page.
