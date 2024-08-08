@@ -20,6 +20,7 @@ export class JobListComponent {
   }
 
   toggleFavorite(job: Job) {
+    console.log('toggle favorite job', job);
     return this.isFavorite(job)
       ? this.dataService.removeFavorite(job)
       : this.dataService.addFavorite(job);

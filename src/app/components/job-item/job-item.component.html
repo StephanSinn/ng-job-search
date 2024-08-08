@@ -5,8 +5,8 @@
         <p>Company: {{ job().companyName }}  Reference: {{ job().reference }} </p>
       </app-job-title>
     </div>
-    <div class="col-sm-1">
-      <ng-content></ng-content>
+    <div class="col-sm-1" *ngIf="isJobList()">
+      <span class="icon-star" [id]="'star-'+job().id" (click)="toggleFavorite()" [ngClass]="isFavorite() ? 'active' : ''"></span>
     </div>
   </div>
 </div>

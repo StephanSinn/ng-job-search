@@ -2,9 +2,7 @@
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
       @for (job of jobs; track $index) {
-        <app-job-item [job]="job">
-          <span class="icon-star" (click)="toggleFavorite(job)" [ngClass]="isFavorite(job) ? 'active' : ''"></span>
-        </app-job-item>
+        <app-job-item [job]="job" [isJobList]="true" (onFavoriteChange)="toggleFavorite($event)" [isFavorite]="isFavorite(job)"></app-job-item>
       }
     </div>
   </div>

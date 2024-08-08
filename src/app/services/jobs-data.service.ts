@@ -23,7 +23,7 @@ export class JobsDataService {
   }
 
   removeFavorite(job: Job) {
-    this.favorites.splice(this.favorites.indexOf(job), 1);
+    this.favorites = this.favorites.filter((fav) => fav.id != job.id);
     this.storeFavoritesLocally();
   }
 
