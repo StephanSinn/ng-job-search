@@ -13,9 +13,9 @@ import { TopMenuComponent } from './components/top-menu/top-menu.component';
 })
 export class AppComponent implements OnInit {
   title = 'ng-job-search';
-  dataService = inject(JobsDataService);
+  jobsDataService = inject(JobsDataService);
 
   ngOnInit() {
-    this.dataService.getFavoritesLocally();
+    this.jobsDataService.getFavoritesLocally();
   }
 }

@@ -1,7 +1,7 @@
 <div class="container" >
   <div class="row">
-    <div class="col-sm-8 col-sm-offset-2" *ngIf="jobDataService.favorites.length; else noFavorites">
-      @for (favorite of jobDataService.favorites; track $index) {
+    <div class="col-sm-8 col-sm-offset-2" *ngIf="jobsDataService.favorites.length; else noFavorites">
+      @for (favorite of jobsDataService.favorites; track $index) {
         <app-job-item [job]="favorite">
         </app-job-item>
       }

@@ -19,7 +19,6 @@ export class JobItemComponent {
   @Output() onFavoriteChange = new EventEmitter<Job>();
 
   toggleFavorite(): void {
-    console.log('emit');
     this.onFavoriteChange.emit(this.job());
   }
 }

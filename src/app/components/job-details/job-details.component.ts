@@ -30,7 +30,7 @@ import { JobTitleComponent } from '../job-title/job-title.component';
 })
 export class JobDetailsComponent {
   private activatedRoute = inject(ActivatedRoute);
-  private jobDataService = inject(JobsDataService);
+  private jobsDataService = inject(JobsDataService);
   private location = inject(Location);
 
   goBackToPreviousPage(): void {
@@ -41,7 +41,7 @@ export class JobDetailsComponent {
     map((params) => params.get('id')),
     filter((jobId): jobId is string => jobId != null),
     switchMap((jobId) => {
-      return this.jobDataService.getJobDetails(jobId);
+      return this.jobsDataService.getJobDetails(jobId);
     }),
   );
 }

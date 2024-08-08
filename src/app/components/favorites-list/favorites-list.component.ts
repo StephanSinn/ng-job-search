@@ -11,5 +11,5 @@ import { JobItemComponent } from '../job-item/job-item.component';
   styles: ``,
 })
 export class FavoritesListComponent {
-  jobDataService = inject(JobsDataService);
+  jobsDataService = inject(JobsDataService);
 }

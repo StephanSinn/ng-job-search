@@ -12,17 +12,16 @@ import { Job } from '../../models/job';
   styles: ``,
 })
 export class JobListComponent {
-  dataService = inject(JobsDataService);
-  jobs$ = this.dataService.jobs$;
+  private jobsDataService = inject(JobsDataService);
+  jobs$ = this.jobsDataService.jobs$;
 
   isFavorite(job: Job): boolean {
-    return this.dataService.favorites.some((fav) => fav.id == job.id);
+    return this.jobsDataService.favorites.some((fav) => fav.id == job.id);
   }
 
   toggleFavorite(job: Job) {
-    console.log('toggle favorite job', job);
     return this.isFavorite(job)
-      ? this.dataService.removeFavorite(job)
-      : this.dataService.addFavorite(job);
+      ? this.jobsDataService.removeFavorite(job)
+      : this.jobsDataService.addFavorite(job);
   }
 }
