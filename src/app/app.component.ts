@@ -16,6 +16,6 @@ export class AppComponent implements OnInit {
   jobsDataService: JobsDataService = inject(JobsDataService);
 
   ngOnInit(): void {
-    this.jobsDataService.getFavoritesLocally();
+    this.jobsDataService.restoreFavoritesLocally();
   }
 }

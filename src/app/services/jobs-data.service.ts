@@ -31,7 +31,7 @@ export class JobsDataService {
     localStorage.setItem('favorites', JSON.stringify(this.favorites));
   }
 
-  getFavoritesLocally(): void {
-    this.favorites = JSON.parse(localStorage.getItem('favorites') ?? '');
+  restoreFavoritesLocally(): void {
+    this.favorites = JSON.parse(localStorage.getItem('favorites') ?? '[]');
   }
 }
