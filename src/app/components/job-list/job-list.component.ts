@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { JobsDataService } from '../../services/jobs-data.service';
-import { AsyncPipe, NgClass, NgIf, NgStyle } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
 import { JobItemComponent } from '../job-item/job-item.component';
 import { Job } from '../../models/job';
 import { Observable } from 'rxjs';
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-job-list',
   standalone: true,
-  imports: [AsyncPipe, JobItemComponent, NgIf, NgClass, NgStyle],
+  imports: [AsyncPipe, JobItemComponent, NgIf],
   templateUrl: './job-list.component.html',
   styles: ``,
 })

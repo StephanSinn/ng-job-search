@@ -3,28 +3,13 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { filter, map, Observable, switchMap } from 'rxjs';
 import { Job } from '../../models/job';
 import { JobsDataService } from '../../services/jobs-data.service';
-import {
-  AsyncPipe,
-  DatePipe,
-  JsonPipe,
-  Location,
-  NgForOf,
-  NgIf,
-} from '@angular/common';
+import { AsyncPipe, DatePipe, Location, NgForOf, NgIf } from '@angular/common';
 import { JobTitleComponent } from '../job-title/job-title.component';
 
 @Component({
   selector: 'app-job-details',
   standalone: true,
-  imports: [
-    RouterLink,
-    AsyncPipe,
-    JsonPipe,
-    JobTitleComponent,
-    NgIf,
-    NgForOf,
-    DatePipe,
-  ],
+  imports: [RouterLink, AsyncPipe, JobTitleComponent, NgIf, NgForOf, DatePipe],
   templateUrl: './job-details.component.html',
   styles: ``,
 })
